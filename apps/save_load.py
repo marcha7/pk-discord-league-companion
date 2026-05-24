@@ -4,12 +4,12 @@ from apps import player_rank
 
 
 def save_players():
-    with open("players.json", "w") as file :
+    with open("players.json", "w+") as file :
         json.dump(player_rank.Player.cls_dico(), file)
 
 
 def load_players():
-    with open("players.json", "r") as file :
+    with open("players.json", "w+") as file :
         try :
             players_dico = json.load(file)
         except :

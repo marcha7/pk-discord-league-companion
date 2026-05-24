@@ -7,7 +7,6 @@ It's used to track player's rank every week and display it in a chosen channel
 ## Commands
 
 - *rank <riot_id> : Gives riot_id's currents ranks (SoloQ/DuoQ and Flex) and compares it to last saved ranks
-- *puck for a surprise
 - *add <riot_id> : to track players and saves their ranks
 - *remove <riot_id> : to delete a tracked players
 - *saved : to show tracked players

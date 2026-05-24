@@ -16,6 +16,9 @@ from apps import save_load
 
 dotenv.load_dotenv()
 discord_bot_token = os.getenv("DISCORD_BOT_TOKEN")
+if discord_bot_token == None:
+    print("The Discord bot token couldn't be retrieved")
+    exit()
 
 scheduler = AsyncIOScheduler()
 
@@ -32,7 +35,7 @@ save_load.load_players()
 
 
 def loads_channels():
-    with open("channels.json", "r") as file:
+    with open("channels.json", "w+") as file:
         try:
             data = json.load(file)
         except:
@@ -42,7 +45,7 @@ def loads_channels():
 saved_channels = loads_channels()
 
 def save_channels():
-    with open("channels.json", "w") as file:
+    with open("channels.json", "w+") as file:
         json.dump(saved_channels, file)
 
 
